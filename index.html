@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Bilhar Brasileiro - Modo Bolinho</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎱 BILHAR BRASILEIRO 🎱</h1>
+            <div class="game-mode-selector">
+                <button class="mode-btn active" data-mode="normal">MODO NORMAL</button>
+                <button class="mode-btn" data-mode="bolinho">MODO BOLINHO</button>
+            </div>
+        </div>
+        
+        <div class="game-layout">
+            <div class="power-panel">
+                <div class="power-title">💪 SELEÇÃO DE FORÇA</div>
+                <div class="power-controls">
+                    <input type="range" id="powerSlider" min="0" max="100" value="50" class="power-slider">
+                    <div class="power-buttons">
+                        <button class="power-btn" data-power="20">💨 Leve</button>
+                        <button class="power-btn" data-power="50">⚡ Médio</button>
+                        <button class="power-btn" data-power="80">🔥 Forte</button>
+                        <button class="power-btn" data-power="100">💥 Máxima</button>
+                    </div>
+                    <div class="power-value-display">
+                        Força: <span id="selectedPower">50</span>%
+                    </div>
+                </div>
+                <div class="power-bar-visual">
+                    <div class="power-bar-fill-manual" id="powerBarManual" style="width: 50%"></div>
+                </div>
+            </div>
+            
+            <div class="table-wrapper">
+                <canvas id="gameCanvas" width="900" height="550"></canvas>
+                <div class="touch-controls" id="touchControls">
+                    <button class="touch-shoot-btn" id="touchShootBtn">🎯 TACAR!</button>
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <div class="score-board">
+                    <div class="player-score">
+                        <h3>🎯 JOGADOR</h3>
+                        <div class="score-value" id="playerScore">0</div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="opponent-score">
+                        <h3>🤖 OPONENTE</h3>
+                        <div class="score-value" id="opponentScore">0</div>
+                    </div>
+                </div>
+                
+                <div class="game-status">
+                    <div class="turn-indicator" id="turnIndicator">
+                        🎯 Sua vez!
+                    </div>
+                    <div class="balls-remaining" id="ballsRemaining">
+                        Bolas restantes: 7
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn reset-btn" id="resetBtn">🔄 NOVA PARTIDA</button>
+                    <button class="btn ai-btn" id="aiBtn">🤖 IA JOGAR</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions" id="instructions">
+            👆 Toque e arraste na bola branca para mirar | Aperte "TACAR!" para jogar
+        </div>
+    </div>
+    
+    <script src="/src/js/game.js"></script>
+</body>
+</html>
